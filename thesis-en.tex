@@ -1,0 +1,54 @@
+% !TEX program = xelatex
+% Created 2024-07-11 Чт 19:10
+% Intended LaTeX compiler: pdflatex
+\documentclass[hidelinks,fontsize=14pt,paper=a4,pagesize,DIV=calc,noenddot]{gost}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{polyglossia}
+\usepackage{listings}
+\input{preamble}
+\organization{Saint Petersburg State University}
+\manuscript{Published in manuscript form}
+\degree{Thesis for candidate of sciences degree}
+\speciality{Speciality 05.13.18.\\Mathematical modelling, numerical methods and programme complexes}
+\supervisor{Scientific advisor:\\Title, \\ Prof.~Name of Supervisor}
+\newcites{published}{Publications on the subject of thesis}
+% \AtBeginDocument{\setcounter{page}{146}}
+\author{Chi Zhao}
+\date{St. Petersburg \\ 2024}
+\title{Title of thesis}
+\hypersetup{
+ pdfauthor={Chi Zhao},
+ pdftitle={Title of thesis},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.4.6)},
+ pdflang={English},
+ unicode={true}
+}
+\setdefaultlanguage{english}
+\begin{document}
+
+
+\maketitlepage
+\tableofcontents
+
+\input{contents/EN/Introduction.tex}
+\input{contents/EN/Chapter1.tex}
+\input{contents/EN/Chapter2.tex}
+\input{contents/EN/Chapter3.tex}
+\input{contents/EN/Conclusions.tex}
+\input{contents/EN/Abbreviations.tex}
+\input{postamble}
+
+\bibliographystyle{ugost2008}
+\bibliography{bib/refs}
+
+\input{contents/EN/Appendix.tex}
+\end{document}
