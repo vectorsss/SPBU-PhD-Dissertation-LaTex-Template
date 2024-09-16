@@ -10,7 +10,7 @@
                 "-aux-directory=build",
                 "-shell-escape",
                 "-pdf",
-                "-xelatex",
+                "-pdflatex",
                 "-bibtex",
                 "-f",
                 "%DOC%"

@@ -13,7 +13,7 @@ FLAGs = \
 	-interaction=nonstopmode \
 	-output-directory=build \
 	-pdf \
-	-xelatex \
+	-pdflatex \
 	-bibtex \
 	-shell-escape
 

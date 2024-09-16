@@ -9,6 +9,8 @@
   top=20mm,%
   right=10mm,%
   bottom=20mm,%
+  footskip=32pt,
+  headheight=32pt,
   a4paper%
 ]{geometry}
 
@@ -19,7 +21,7 @@
 
 % line and paragraph spacing
 \RequirePackage{setspace}
-\setstretch{1.5}
+\setstretch{1.2}
 \setlength{\parskip}{0pt}
 \setlength{\parindent}{2.5em}
 
@@ -28,12 +30,13 @@
 \cohead{\thepage}
 \cofoot{}
 \setkomafont{pagehead}{\scriptsize\mdseries\upshape}
+\addtokomafont{sectionentry}{\rmfamily}
 \pagestyle{scrheadings}
 
 % section format and spacing
 % N.B. We use 2 baseline skip here because we have one and half spacing
 \RedeclareSectionCommand[%
-    font=\LARGE\singlespacing\centering,%
+    font=\LARGE\singlespacing\centering\rmfamily,%
     beforeskip=2\baselineskip,%
     tocnumwidth=0pt,%
     tocentrynumberformat=\gobbleentrynumber,%
@@ -43,23 +46,24 @@
 \renewcommand*{\sectionformat}{}
 
 \RedeclareSectionCommand[%
-    font=\Large\singlespacing\centering,%
+    font=\Large\singlespacing\centering\rmfamily,%
     beforeskip=2\baselineskip,%
     afterskip=2\baselineskip%
 ]{subsection}
 
 \RedeclareSectionCommand[%
-    font=\large\singlespacing\centering,%
+    font=\large\singlespacing\centering\rmfamily,%
     beforeskip=2\baselineskip,%
     afterskip=2\baselineskip%
 ]{subsubsection}
 
 \RedeclareSectionCommand[%
-    font=\normalsize\singlespacing\bfseries,%
+    font=\normalsize\singlespacing\rmfamily,%
     beforeskip=0.5\baselineskip,%
     afterskip=0.5\baselineskip,%
     indent=0pt,
 ]{paragraph}
+
 
 % % additional fields for title page
 \newcommand*{\organization}[1]{\gdef\@organization{#1}}
@@ -67,12 +71,14 @@
 \newcommand*{\speciality}[1]{\gdef\@speciality{#1}}
 \newcommand*{\degree}[1]{\gdef\@degree{#1}}
 \newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
+\newcommand*{\dissertation}[1]{\gdef\@dissertation{#1}}
 
 \newcommand*{\@organization}[1]{organization is not set}
 \newcommand*{\@manuscript}[1]{manuscript is not set}
 \newcommand*{\@speciality}[1]{speciality is not set}
 \newcommand*{\@degree}[1]{degree is not set}
 \newcommand*{\@supervisor}[1]{supervisor is not set}
+\newcommand*{\@dissertation}[1]{dissertation is not set}
 
 % Title page template
 \renewcommand*{\maketitle}{%
@@ -87,7 +93,7 @@
     {\large\bfseries\@author\par}\vspace{40pt}%
     {\LARGE\bfseries\@title\par}\vspace{25pt}%
     {\normalsize\@speciality\par}\vspace{50pt}%
-    {\Large\bfseries{DISSERTATION}\par}\vspace{38pt}%
+    {\Large\bfseries\@dissertation\par}\vspace{38pt}%
     {\normalsize\@degree\par}\vspace{50pt}%
     \begin{flushright}%
     {\normalsize\@supervisor\par}%
@@ -114,4 +120,9 @@
 \RequirePackage{etoolbox}
 \pretocmd{\section}{\clearpage}{}{}
 
-\RequirePackage{hyperref}
+% \RequirePackage{hyperref}
+% language settings
+\RequirePackage[utf8]{inputenc}
+% \RequirePackage[T1,T2A]{fontenc}
+% \RequirePackage[russian, english]{babel}
+% \RequirePackage{lmodern}

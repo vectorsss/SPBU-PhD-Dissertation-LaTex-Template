@@ -1,23 +1,22 @@
 % !TEX program = xelatex
 % Created 2024-07-11 Чт 18:54
 % Intended LaTeX compiler: pdflatex
-\documentclass[hidelinks,fontsize=14pt,paper=a4,pagesize,DIV=calc,noenddot]{gost}
+\documentclass[hidelinks,fontsize=14pt,paper=a4,pagesize,DIV=calc]{gost}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{hyperref}
 \usepackage{tikz}
 \usepackage{cite}
 \usepackage{url}
-\usepackage{polyglossia}
 \usepackage{listings}
 \input{preamble}
 \organization{Санкт-Петербургский государственный университет}
 \manuscript{на правах рукописи}
 \degree{Диссертация на соискание ученой степени\\кандидата физико-математических наук}
 \speciality{Специальность 05.13.18\\Математическое моделирование, численные методы и комплексы программ}
-\supervisor{Научный руководитель:\\Учёное зва́ние, \\ Проф. Имя Руководителя}
+\supervisor{Научный руководитель:\\Учёное звание, \\ Проф. Имя Руководителя}
+\dissertation{ДИССЕРТАЦИЯ}
 \newcites{published}{Список опубликованных по теме диссертации работ}
 \author{Чи Чжао}
 \date{Санкт-Петербург\\ 2024}
@@ -31,7 +30,6 @@
  pdflang={Russian},
  unicode={true}
 }
-\setdefaultlanguage{russian}
 \begin{document}
 
 
@@ -39,16 +37,16 @@
 
 \tableofcontents
 
-\input{contents/EN/Introduction.tex}
-\input{contents/EN/Chapter1.tex}
-\input{contents/EN/Chapter2.tex}
-\input{contents/EN/Chapter3.tex}
-\input{contents/EN/Conclusions.tex}
-\input{contents/EN/Abbreviations.tex}
+\input{contents/RU/Introduction.tex}
+\input{contents/RU/Chapter1.tex}
+\input{contents/RU/Chapter2.tex}
+\input{contents/RU/Chapter3.tex}
+\input{contents/RU/Conclusions.tex}
+\input{contents/RU/Abbreviations.tex}
 \input{postamble}
 
 \bibliographystyle{ugost2008}
-\bibliography{bib/refs}
+\bibliography{bib/refs-ru}
 
 \input{contents/EN/Appendix.tex}
 \end{document}

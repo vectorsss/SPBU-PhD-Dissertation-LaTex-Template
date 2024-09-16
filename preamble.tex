@@ -1,11 +1,19 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{hyperref}
 \usepackage{tikz}
 \usepackage{cite}
 \usepackage{url}
-
-\input{fonts}
+\usepackage{rotating} % for sidewaystable
+\usepackage{tabularx} % better tabular
+\usepackage{subcaption}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{enumitem}
+\newcommand{\barchart}[1]{%
+  \begin{tikzpicture}[baseline=-0.5ex]
+    \fill[gray] (0,0) rectangle (#1*2 cm,0.2cm);
+  \end{tikzpicture}%
+}
 
 \usepackage{latexsym} % \Box macro
 \usepackage{mathtools} % fancy dots in matrices
@@ -13,7 +21,9 @@
 \raggedbottom
 \clubpenalty=10000
 \widowpenalty=10000
-
+\tolerance=1000
+% \emergencystretch=3em
+% \setlength{\footheight}{26pt}
 % set the figure directory
 \graphicspath{{figures/}}
 
@@ -22,3 +32,34 @@
 
 \input{math}
 \input{org}
+\input{custom}
+\usepackage{xstring}
+\newcommand{\conditionalBibliography}{%
+  \IfStrEq*{\jobname}{thesis-en}{%
+    \bibliographypublished{bib/published-papers.bib}%
+  }{%
+    \IfStrEq*{\jobname}{thesis-ru}{%
+      \bibliographypublished{bib/published-papers-ru.bib}%
+    }{%
+      \typeout{Warning: unknow \jobname, use English reference as default}%
+      \bibliographypublished{bib/published-papers.bib}%
+    }%
+  }%
+}
+\IfStrEq*{\jobname}{thesis-en}{%
+  \usepackage[T1,T2A]{fontenc}
+  \usepackage[russian,english]{babel}
+  \selectlanguage{english}
+}{%
+\IfStrEq*{\jobname}{thesis-ru}{%
+  \usepackage[T2A]{fontenc}
+  \usepackage[english,russian]{babel}
+  \selectlanguage{russian}
+}{%
+  \typeout{Warning: unknow \jobname, use English as default}%
+  \usepackage[T1,T2A]{fontenc}
+  \usepackage[russian,english]{babel}
+  \selectlanguage{english}
+}%
+}%
+\usepackage{hyperref}
