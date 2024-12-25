@@ -32,6 +32,6 @@ $(PDF_RU): $(THESIS_RU).tex
 
 clean:
 	rm -rf $(OUTPUT_DIR)
-	rm -rf *.pdf
+	rm -rf thesis-en.pdf thesis-ru.pdf
 # Phony targets
 .PHONY: clean all build

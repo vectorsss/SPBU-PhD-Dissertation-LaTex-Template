@@ -2,7 +2,7 @@
 latexmk -interaction=nonstopmode \
         -output-directory=build \
         -pdf \
-        -xelatex\
+        -pdflatex\
         -bibtex \
         -shell-escape -f $1
 mv build/*.pdf .

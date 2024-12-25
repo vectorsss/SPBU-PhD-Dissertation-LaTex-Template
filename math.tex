@@ -1,7 +1,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
-
+\usepackage{xstring}
 % custom mathematical expressions
 \newcommand{\Var}[1]{\sigma_{#1}^2}
 \newcommand{\Fourier}[1]{\mathcal{F}\left\{#1\right\}}
@@ -31,3 +31,16 @@
 % wave vector
 \newcommand{\Kvec}{\vec{k}}
 \newcommand{\Kveclen}{\lvert\smash[b]{\Kvec}\rvert}
+\IfStrEq*{\jobname}{thesis-en}{%
+    \newtheorem{hypothesis}{Hypothesis}
+    \newtheorem{definition}{Definition}
+}{%
+\IfStrEq*{\jobname}{thesis-ru}{%
+  \newtheorem{hypothesis}{Гипотеза}
+  \newtheorem{definition}{Определение}
+}{%
+  \typeout{Warning: unknow \jobname, use English as default}%
+  \newtheorem{hypothesis}{Hypothesis}
+  \newtheorem{definition}{Definition}
+}%
+}%
